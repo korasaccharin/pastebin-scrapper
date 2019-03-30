@@ -2,16 +2,20 @@
 # -*- coding: UTF-8 -*-
 
 # from scraper import PastebinScraper
-from scraper.networking.paste import Paste
+from scraper.paste import Paste
+import pymongo
 
 if __name__ == "__main__":
-    pastes  = Paste.where({ 'limit': 1 })
-    paste   = pastes[0]
-    content = paste.content()
+    client   = pymongo.MongoClient("mongodb://localhost:27017/")
+    database = client["pastebin"]
 
-    words = [b'cnes', b'oscaro']
+    # pastes  = Paste.where({ 'limit': 1 })
+    # paste   = pastes[0]
+    # content = paste.content()
 
-    for w in words:
-        if w in content:
-            print("foo")
+    # words = [b'cnes', b'oscaro']
+
+    # for w in words:
+    #     if w in content:
+    #         print("foo")
 
