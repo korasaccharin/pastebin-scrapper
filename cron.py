@@ -4,8 +4,8 @@
 from crontab import CronTab
 import time
 
-cron = CronTab(user='ksaccharin')
-job  = cron.new(command='python3 example1.py')
+cron = CronTab(user=True)
+job  = cron.new(command='python3 pastes.py')
 
 job.minute.every(1)
 
